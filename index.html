@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apexco Global Energy Products</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full bg-white z-50 shadow nav-font">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex items-center justify-between h-20">
+
+                <!-- LOGO -->
+                <div>
+                    <img src="/Assets/Logo.png" class="h-10">
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm">
+
+                    <a href="#" class="bg-red-600 text-white px-5 py-2">
+                        Home
+                    </a>
+
+                    <a href="#" class="text-gray-700 hover:text-red-600">
+                        About Us
+                    </a>
+
+                    <a href="#" class="text-gray-700 hover:text-red-600">
+                        Services
+                    </a>
+
+                    <a href="#" class="text-gray-700 hover:text-red-600">
+                        Products
+                    </a>
+
+                    <a href="#" class="text-gray-700 hover:text-red-600">
+                        Contact Us
+                    </a>
+
+                </nav>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="menuBtn" class="md:hidden text-2xl">
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t nav-font">
+
+            <a href="#" class="block px-6 py-3 bg-red-600 text-white">Home</a>
+            <a href="#" class="block px-6 py-3">About Us</a>
+            <a href="#" class="block px-6 py-3">Services</a>
+            <a href="#" class="block px-6 py-3">Products</a>
+            <a href="#" class="block px-6 py-3">Contact Us</a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen text-white">
+
+        <!-- Background -->
+        <img src="/Assets/Banner.png" class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Container -->
+        <div class="relative max-w-7xl mx-auto px-6 min-h-screen flex flex-col justify-between pt-40 pb-16">
+
+            <!-- TOP CONTENT -->
+            <div class="max-w-3xl">
+
+                <h1 class="heading text-4xl md:text-6xl font-medium leading-tight">
+                    Quality Oil Field <br>
+                    Equipment and <br>
+                    Industrial Supplies
+                </h1>
+
+                <p class="mt-6 text-lg text-gray-200">
+                    Taking care of oil field & industrial needs
+                </p>
+                <a href="#"
+                    class="inline-flex mt-8 bg-red-600 hover:bg-red-700 transition px-7 py-3 items-center gap-3 text-white">
+                    Explore More
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+
+            </div>
+
+
+            <!-- BOTTOM CONTENT -->
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-8 mt-16">
+
+                <!-- Paragraph -->
+                <p class="max-w-xl text-sm text-gray-200 leading-relaxed">
+                    We strive to be the best provider of Products in the Oilfield Industry
+                    through the best quality service and on time delivery. The management
+                    and staff strive to work hard to improve constantly with support of
+                    Manufacturer's and Vendors.
+                </p>
+
+                <!-- Contact Button -->
+                <a href="#" class="bg-white text-black px-7 py-3 flex items-center gap-3 w-fit">
+                    Contact Us
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FORKLIFT -->
+    <section class="py-20">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- RIGHT IMAGE (shows first on mobile) -->
+                <div class="flex justify-center md:justify-end order-1 md:order-2">
+
+                    <img src="/Assets/Forklift.png" class="max-h-[400px] w-auto object-contain">
+
+                </div>
+
+
+                <!-- LEFT CONTENT -->
+                <div class="order-2 md:order-1">
+
+                    <h2 class="heading text-3xl md:text-5xl font-medium leading-tight text-black">
+
+                        <span class="md:whitespace-nowrap">
+                            Highly Experienced in <span class="text-red-600">Professional</span>
+                        </span>
+
+                        <br class="hidden md:block">
+
+                        <span class="md:whitespace-nowrap">
+                            Oilfield Equipment Distribution
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-6 text-gray-700 max-w-lg leading-relaxed">
+
+                        AAPEXCO GENERAL Supply INC. established in 2011 in TEXAS, USA.
+                        In the beginning we strictly focus on resale of Oilfield Drilling Equipment's & Spare Parts.
+
+                    </p>
+
+                    <a href="#"
+                        class="inline-flex mt-8 bg-red-600 hover:bg-red-700 transition px-7 py-3 items-center gap-3 text-white">
+
+                        Read More
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+
+        lucide.createIcons();
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const btn = document.getElementById("menuBtn");
+            const menu = document.getElementById("mobileMenu");
+
+            btn.addEventListener("click", function () {
+                menu.classList.toggle("hidden");
+            });
+
+        });
+
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
