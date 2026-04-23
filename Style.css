@@ -19,56 +19,41 @@ body {
     padding: 0;
 }
 
-.heading{
+.heading {
     font-family: "Gill Sans MT Pro", "Gill Sans", "Segoe UI", sans-serif;
 }
 
-/* ===== Base Fade Animation ===== */
-.fade-anim {
-    opacity: 0;
+.dots-animate img {
+    animation: pulseDots 4s ease-in-out infinite;
 }
 
-/* Trigger animation */
-.fade-anim.active {
-    animation-duration: 1.2s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-out;
+.dot-a {
+    animation-delay: 0s;
 }
 
-/* ===== Fade In From Left ===== */
-.fade-left.active {
-    animation-name: fadeLeft;
+.dot-b {
+    animation-delay: 0.6s;
 }
 
-/* ===== Fade In From Right ===== */
-.fade-right.active {
-    animation-name: fadeRight;
+.dot-c {
+    animation-delay: 1.2s;
 }
 
-/* ===== Keyframes ===== */
-@keyframes fadeLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
+@keyframes pulseDots {
+
+    0% {
+        transform: scale(1);
+        opacity: .8;
     }
 
-    to {
+    50% {
+        transform: scale(1.08);
         opacity: 1;
-        transform: translateX(0);
     }
+
+    100% {
+        transform: scale(1);
+        opacity: .8;
+    }
+
 }
-
-@keyframes fadeRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-
-
