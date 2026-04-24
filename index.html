@@ -17,6 +17,57 @@
 </head>
 
 <body>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const elements = document.querySelectorAll(".animate");
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+
+                });
+
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+
+    </script>
+
+    <!-- PAGE LOADER -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
+
+        <div class="flex flex-col items-center gap-6">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 animate-pulse">
+
+            <!-- LOADING SPINNER -->
+            <div class="w-10 h-10 border-4 border-gray-200 border-t-[#BE0B31] rounded-full animate-spin"></div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            loader.style.transition = "opacity 0.5s ease";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
 
     <!-- NAVBAR -->
     <header class="fixed top-0 left-0 w-full bg-white z-50 shadow nav-font">
@@ -27,25 +78,27 @@
 
                 <!-- LOGO -->
                 <div>
-                    <img src="/Assets/Logo.png" class="h-10">
+                    <a href="/index.html">
+                        <img src="/Assets/Logo.png" class="h-10" alt="Logo">
+                    </a>
                 </div>
 
                 <!-- DESKTOP MENU -->
                 <nav class="hidden md:flex items-center space-x-8 text-sm">
 
-                    <a href="#" class="bg-red-600 text-white px-5 py-2">
+                    <a href="/index.html" class="bg-red-600 text-white px-5 py-2">
                         Home
                     </a>
 
-                    <a href="#" class="text-gray-700 hover:text-red-600">
+                    <a href="/pages/about.html" class="text-gray-700 hover:text-red-600">
                         About Us
                     </a>
 
-                    <a href="#" class="text-gray-700 hover:text-red-600">
+                    <a href="/pages/service.html" class="text-gray-700 hover:text-red-600">
                         Services
                     </a>
 
-                    <a href="#" class="text-gray-700 hover:text-red-600">
+                    <a href="/pages/products.html" class="text-gray-700 hover:text-red-600">
                         Products
                     </a>
 
@@ -67,10 +120,10 @@
         <!-- MOBILE MENU -->
         <div id="mobileMenu" class="hidden md:hidden fixed top-20 left-0 w-full h-screen bg-white nav-font">
 
-            <a href="#" class="block px-6 py-4 bg-red-600 text-white">Home</a>
-            <a href="#" class="block px-6 py-4 border-b">About Us</a>
-            <a href="#" class="block px-6 py-4 border-b">Services</a>
-            <a href="#" class="block px-6 py-4 border-b">Products</a>
+            <a href="/index.html" class="block px-6 py-4 bg-red-600 text-white">Home</a>
+            <a href="/pages/about.html" class="block px-6 py-4 border-b">About Us</a>
+            <a href="/pages/service.html" class="block px-6 py-4 border-b">Services</a>
+            <a href="/pages/products.html" class="block px-6 py-4 border-b">Products</a>
             <a href="#" class="block px-6 py-4">Contact Us</a>
 
         </div>
@@ -92,9 +145,9 @@
         <div class="relative max-w-7xl mx-auto px-6 min-h-screen flex flex-col justify-between pt-40 pb-16">
 
             <!-- TOP CONTENT -->
-            <div class="max-w-3xl">
+            <div class="max-w-3xl animate fade-left">
 
-                <h1 class="heading text-4xl md:text-6xl font-medium">
+                <h1 class="heading text-4xl md:text-7xl font-medium">
                     Quality Oil Field <br>
                     Equipment and <br>
                     Industrial Supplies
@@ -104,7 +157,8 @@
                     Taking care of oil field & industrial needs
                 </p><br>
                 <!-- BUTTON -->
-                <a href="#" class="group inline-flex items-center gap-3 bg-red-600 text-white px-5 py-2">
+                <a href="/pages/about.html"
+                    class="group inline-flex items-center gap-3 bg-red-600 text-white px-5 py-2">
 
                     Read More
 
@@ -150,12 +204,35 @@
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
 
-                <!-- RIGHT IMAGE (shows first on mobile) -->
-                <div class="flex justify-center md:justify-end order-1 md:order-2">
+                <!-- RIGHT IMAGE -->
+                <div class="flex justify-center md:justify-end order-1 md:order-2 overflow-hidden">
 
-                    <img src="/Assets/Forklift.png" class="max-h-[400px] w-auto object-contain">
+                    <img id="forkliftAnim" src="/Assets/Forklift.png" class="max-h-[400px] w-auto object-contain
+    translate-x-20 opacity-0
+    transition-all duration-1000 ease-out">
 
                 </div>
+
+                <script>
+
+                    const observer = new IntersectionObserver(entries => {
+
+                        entries.forEach(entry => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.remove("translate-x-20", "opacity-0");
+                                entry.target.classList.add("translate-x-0", "opacity-100");
+
+                            }
+
+                        });
+
+                    });
+
+                    observer.observe(document.getElementById("forkliftAnim"));
+
+                </script>
 
 
                 <!-- LEFT CONTENT -->
@@ -205,12 +282,12 @@
         <div class="grid md:grid-cols-[40%_60%]">
 
             <!-- LEFT IMAGE -->
-            <div class="h-[320px] md:h-[700px]">
+            <div class=" h-[320px] md:h-[700px]">
                 <img src="/Assets/Truck.jpg" class="w-full h-full object-cover">
             </div>
 
             <!-- RIGHT CONTENT -->
-            <div class="bg-[#c8102e] text-white relative flex items-center">
+            <div class="animate fade-right bg-[#c8102e] text-white relative flex items-center">
 
                 <div class="max-w-3xl px-8 md:px-16 py-12 md:py-20">
 
@@ -329,7 +406,7 @@ transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
 
 
                 <!-- CARD 2 -->
-                <div class="bg-[#c8102e] text-white p-10 flex flex-col justify-between
+                <div class="animate fade-left bg-[#c8102e] text-white p-10 flex flex-col justify-between
 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                     <div>
@@ -356,7 +433,7 @@ transition duration-300 hover:rotate-12">
 
 
                 <!-- CARD 3 -->
-                <div class="bg-[#0c2d63] text-white p-10 flex flex-col justify-between
+                <div class="animate fade-right bg-[#0c2d63] text-white p-10 flex flex-col justify-between
 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                     <div>

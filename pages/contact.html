@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apexco Global Energy Products</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const elements = document.querySelectorAll(".animate");
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+
+                });
+
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+
+    </script>
+
+    <!-- PAGE LOADER -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
+
+        <div class="flex flex-col items-center gap-6">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 animate-pulse">
+
+            <!-- LOADING SPINNER -->
+            <div class="w-10 h-10 border-4 border-gray-200 border-t-[#BE0B31] rounded-full animate-spin"></div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            loader.style.transition = "opacity 0.5s ease";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full bg-white z-50 shadow nav-font">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex items-center justify-between h-20">
+
+                <!-- LOGO -->
+                <div>
+                    <a href="/index.html">
+                        <img src="/Assets/Logo.png" class="h-10" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm">
+
+                    <a href="/index.html" class="text-gray-700 hover:text-red-600">
+                        Home
+                    </a>
+
+                    <a href="/pages/about.html" class=" text-gray-700 hover:text-red-600 ">
+                        About Us
+                    </a>
+
+                    <a href="/pages/service.html" class=" text-gray-700 hover:text-red-600 ">
+                        Services
+                    </a>
+
+                    <a href="/pages/products.html" class=" text-gray-700 hover:text-red-600  ">
+                        Products
+                    </a>
+
+                    <a href="/pages/contact.html" class=" bg-red-600 text-white px-5 py-2">
+                        Contact Us
+                    </a>
+
+                </nav>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="menuBtn" class="md:hidden">
+                    <i data-lucide="grip" class="w-7 h-7"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden fixed top-20 left-0 w-full h-screen bg-white nav-font">
+
+            <a href="/index.html" class="block px-6 py-4 border-b">Home</a>
+            <a href="/pages/about.html" class="block px-6 py-4 border-b">About Us</a>
+            <a href="/pages/service.html" class=" block px-6 py-4 border-b">Services</a>
+            <a href="/pages/products.html" class="block px-6 py-4">Products</a>
+            <a href="/pages/contact.html" class=" block px-6 py-4 bg-red-600 text-white">Contact Us</a>
+
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+    <!-- BANNER -->
+    <section class="relative h-[350px] pt-20">
+
+        <img src="/Assets/Get in touch.jpg" class="absolute inset-0 w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <div class="relative h-full flex items-center justify-center text-white">
+
+            <h1 class="heading text-4xl md:text-5xl font-medium">
+                Get in Touch
+            </h1>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- CONTACT SECTION -->
+    <section class="py-20">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+
+                <!-- LEFT SIDE -->
+                <div class="flex flex-col justify-center">
+
+
+                    <h2 class="heading text-3xl md:text-5xl font-medium leading-tight text-black">
+                        <span class="md:whitespace-nowrap">
+                            Contact Us
+                        </span>
+                    </h2><br>
+
+                    <!-- EMAIL -->
+                    <div class="flex items-start gap-4 mb-6">
+                        <i data-lucide="mail" class="text-[#BE0B31] w-6 h-6 mt-1"></i>
+                        <p class="text-lg text-gray-700">
+                            info@apexcosupplyusa.com
+                        </p>
+                    </div>
+
+                    <!-- CORPORATE ADDRESS -->
+                    <div class="flex items-start gap-4 mb-8">
+
+                        <i data-lucide="map-pin" class="text-[#BE0B31] w-6 h-6 mt-1"></i>
+
+                        <div>
+                            <h4 class="font-medium  mb-2">
+                                Corporate Address
+                            </h4>
+
+                            <p class="text-gray-700 leading-relaxed">
+                                APEXCO GLOBAL ENERGY PRODUCTS LLC<br>
+                                DBA APEXCO GENERAL SUPPLY USA<br>
+                                9898 BISSONNET ST, SUITE: 252L,<br>
+                                HOUSTON, TEXAS 77036, USA
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- WORKING TIME -->
+                    <div class="flex items-start gap-4 mb-8">
+
+                        <i data-lucide="clock" class="text-[#BE0B31] w-6 h-6 mt-1"></i>
+
+                        <div>
+                            <h4 class="font-medium  mb-2">
+                                MAILING ADDRESS AND DELVIERY ADDRESS
+                            </h4>
+
+                            <p class="text-gray-700">
+                                6140 HWY6 SOUTH #285, MISSOURI CITY, TEXAS 77459, USA
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- WORKING TIME -->
+                    <div class="flex items-start gap-4 mb-8">
+
+                        <i data-lucide="clock" class="text-[#BE0B31] w-6 h-6 mt-1"></i>
+
+                        <div>
+                            <h4 class="font-medium  mb-2">
+                                Working Time
+                            </h4>
+
+                            <p class="text-gray-700">
+                                Mon – Fri: 9:00 – 19:00 / Closed on Weekends
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="flex items-start gap-4">
+
+                        <i data-lucide="phone" class="text-[#BE0B31] w-6 h-6 mt-1"></i>
+
+                        <p class="text-lg text-gray-700">
+                            Tel: 832-546-5002
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE MAP -->
+                <div class="h-full rounded-2xl overflow-hidden shadow-lg">
+
+                    <iframe src="https://www.google.com/maps?q=9898+Bissonnet+St,+Houston,+TX+77036,+USA&output=embed"
+                        class="w-full h-full min-h-[420px] border-0" loading="lazy">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- FORM  -->
+    <section class="py-10">
+
+        <div class="max-w-7xl mx-auto px-2">
+
+            <p class="text-gray-700 text-lg mb-2 leading-relaxed max-w-3xl">
+                Have a question or looking to collaborate?<br>
+                Reach out to our team for inquiries about our oil and gas solutions, products, and business
+                opportunities.
+            </p>
+
+            <form id="contactForm" action="https://formsubmit.co/ajax/ebenezerlalu07@gmail.com" method="POST"
+                class="space-y-5 w-full">
+
+                <!-- Hidden Settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Contact Message | Apexco Website">
+
+                <input type="text" name="Name" placeholder="Enter your name"
+                    class="w-full border border-gray-300 rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#BE0B31]"
+                    required>
+
+                <input type="email" name="Email" placeholder="Enter your email"
+                    class="w-full border border-gray-300 rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#BE0B31]"
+                    required>
+
+                <input type="text" name="Subject" placeholder="Enter the subject"
+                    class="w-full border border-gray-300 rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#BE0B31]">
+
+                <textarea name="Message" rows="6" placeholder="Enter your message here"
+                    class="w-full border border-gray-300 rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#BE0B31]"></textarea>
+
+                <button type="submit"
+                    class="w-full bg-[#BE0B31] text-white py-4 rounded-lg text-lg font-medium hover:bg-[#a10929] transition">
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <script>
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            const form = this;
+            const formData = new FormData(form);
+            const button = form.querySelector("button");
+
+            button.innerText = "Sending...";
+            button.disabled = true;
+
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            })
+                .then(res => {
+
+                    if (res.ok) {
+
+                        alert("Message sent successfully!");
+                        form.reset();
+
+                    } else {
+
+                        alert("Something went wrong");
+
+                    }
+
+                    button.innerText = "Submit";
+                    button.disabled = false;
+
+                })
+                .catch(() => {
+
+                    alert("Error sending message");
+
+                    button.innerText = "Submit";
+                    button.disabled = false;
+
+                });
+
+        });
+
+    </script>
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="bg-white text-gray-700">
+
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 mb-5">
+
+            <!-- GRID -->
+            <div class="grid md:grid-cols-[3fr_0.8fr_1.2fr] gap-16">
+
+                <!-- LEFT COLUMN -->
+                <div>
+
+                    <p class="text-sm leading-relaxed mb-6">
+                        APEXCO GENERAL Supply INC. established in 2011 in TEXAS, USA. In the
+                        beginning we strictly focus on resale of Oilfield Drilling Equipment's
+                        & Spare Parts. Due to high demand for Pipe, Valves and Fittings in the
+                        Export Market we started sourcing and supplying these products to
+                        Clients at a very competitive price and delivery.
+                    </p>
+
+                    <p class="text-sm">
+                        10039 BISSONNET ST, SUITE: 312B, HOUSTON, TEXAS 77036, USA
+                    </p>
+
+                    <p class="text-sm mb-6">
+                        6140 Hwy 6 #285, Missouri City, TX 77459, USA
+                    </p>
+
+                    <div class="flex gap-5 text-xl text-gray-600 mt-4">
+
+                        <i class="fa-brands fa-facebook-f hover:text-blue-600 cursor-pointer"></i>
+                        <i class="fa-brands fa-x-twitter hover:text-black cursor-pointer"></i>
+                        <i class="fa-brands fa-linkedin-in hover:text-blue-700 cursor-pointer"></i>
+                        <i class="fa-brands fa-instagram hover:text-pink-600 cursor-pointer"></i>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <!-- LINKS COLUMN -->
+                <div>
+
+                    <ul class="space-y-4 text-base">
+
+                        <li><a href="#" class="hover:text-red-600">Home</a></li>
+                        <li><a href="#" class="hover:text-red-600">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-600">Services</a></li>
+                        <li><a href="#" class="hover:text-red-600">Our Products</a></li>
+                        <li><a href="#" class="hover:text-red-600">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT COLUMN -->
+                <div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Contact Info
+                    </h3>
+
+                    <p class="text-lg mb-3">
+                        832-546-5002
+                    </p>
+
+                    <p class="text-lg mb-3">
+                        info@apexcosupplyusa.com
+                    </p>
+
+                    <p class="text-lg">
+                        832-546-5002
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-[#9F0E2D] text-white">
+
+            <div
+                class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-sm text-center md:text-left">
+
+                <p class="md:text-left">
+                    © Apexcosupplyusa.com. All rights reserved.
+                </p>
+
+                <p class="md:text-right">
+                    Mon – Fri: 9:00 – 19:00 / Closed on Weekends
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+
+        lucide.createIcons();
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const btn = document.getElementById("menuBtn");
+            const menu = document.getElementById("mobileMenu");
+
+            btn.addEventListener("click", function () {
+                menu.classList.toggle("hidden");
+            });
+
+        });
+
+    </script>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

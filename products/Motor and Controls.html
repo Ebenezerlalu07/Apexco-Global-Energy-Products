@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apexco Global Energy Products</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const elements = document.querySelectorAll(".animate");
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+
+                });
+
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+
+    </script>
+
+    <!-- PAGE LOADER -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
+
+        <div class="flex flex-col items-center gap-6">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 animate-pulse">
+
+            <!-- LOADING SPINNER -->
+            <div class="w-10 h-10 border-4 border-gray-200 border-t-[#BE0B31] rounded-full animate-spin"></div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            loader.style.transition = "opacity 0.5s ease";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full bg-white z-50 shadow nav-font">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex items-center justify-between h-20">
+
+                <!-- LOGO -->
+                <div>
+                    <a href="/index.html">
+                        <img src="/Assets/Logo.png" class="h-10" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm">
+
+                    <a href="/index.html" class="text-gray-700 hover:text-red-600">
+                        Home
+                    </a>
+
+                    <a href="/pages/about.html" class=" text-gray-700 hover:text-red-600 ">
+                        About Us
+                    </a>
+
+                    <a href="/pages/service.html" class=" text-gray-700 hover:text-red-600 ">
+                        Services
+                    </a>
+
+                    <a href="/pages/products.html" class="  bg-red-600 text-white px-5 py-2">
+                        Products
+                    </a>
+
+                    <a href="/pages/contact.html" class="text-gray-700 hover:text-red-600">
+                        Contact Us
+                    </a>
+
+                </nav>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="menuBtn" class="md:hidden">
+                    <i data-lucide="grip" class="w-7 h-7"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden fixed top-20 left-0 w-full h-screen bg-white nav-font">
+
+            <a href="/index.html" class="block px-6 py-4 border-b">Home</a>
+            <a href="/pages/about.html" class="block px-6 py-4 border-b">About Us</a>
+            <a href="/pages/service.html" class=" block px-6 py-4 border-b">Services</a>
+            <a href="/pages/products.html" class="  block px-6 py-4 bg-red-600 text-white">Products</a>
+            <a href="/pages/contact.html" class="block px-6 py-4">Contact Us</a>
+
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+    <!-- BANNER -->
+    <section class="relative h-[350px] pt-20">
+
+        <img src="/Assets/Motor.jpg" class="absolute inset-0 w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <div class="relative h-full flex items-center justify-center text-white">
+
+            <h1 class="heading text-4xl md:text-5xl font-medium">
+                Our Products
+            </h1>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="py-10">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+                <!-- LEFT CONTENT -->
+                <div>
+
+                    <h2 class="text-4xl  font-semibold text-gray-900 mb-8">
+                        Motor and Controls
+                    </h2>
+
+                    <!-- Premium Efficiency -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-1">Motor Descriptions</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            AC motors manufactured by Marathon, Baldor, Teco, Reliance, and Tatung
+                        </p>
+                    </div>
+
+
+                    <!-- Premium Efficiency -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-1">Premium Efficiency</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Manufactured by Baldor, Teco, Reliance, and Marathon. These premium efficiency
+                            designs are available in both TEFC and Open Drip proof construction. All
+                            3-phase motors are inventory ready per NEMA Standard MG1, Part 31.4.4.2.
+                            This means the motors in 230v and 460v meet NEMA’s corona inception voltage
+                            requirements and can withstand peak voltages up to 1600v. Motors having
+                            premium efficiency are also available in single phase.
+                        </p>
+                    </div>
+
+                    <!-- Brake Motors -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-1">Brake Motors</h4>
+                        <p class="text-gray-700">
+                            Manufactured by Baldor, Teco, Reliance, and Marathon. Brake motors may be used
+                            on machine tools, conveyors, door operators, speed reducers, hoists, or any
+                            application requiring quick stops and positive holds.
+                        </p>
+                    </div>
+
+                    <!-- Vertical Hollow -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-1">
+                            Vertical Hollow & Vertical Solid Shaft
+                        </h4>
+                        <p class="text-gray-700">
+                            Manufactured by Marathon, Tatung, North American Beeco offers Vertical
+                            Hollow Shaft High Thrust Motors with the following premium features as
+                            standard:
+                        </p>
+                    </div>
+
+                    <!-- HVAC -->
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-1">HVAC</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Manufactured by Baldor, Marathon, Reliance, Teco ranging in size from 1/4
+                            to 75HP and include heavy duty industrial designs as well as designs for
+                            commercial applications. These applications include ventilators, direct
+                            drive and belted fans, exhaust fans, unit heaters, air conditioning units,
+                            and commercial refrigeration condensers. Also included are motors designed
+                            especially for use with variable torque electronic controls that are used
+                            to conserve electricity.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+                <div>
+
+                    <!-- Image -->
+                    <div class="animate fade-right mb-10">
+                        <img src="/Assets/Motor anc controls.png" class="rounded-lg shadow-lg w-full object-cover">
+                    </div>
+
+                    <!-- Feature Box -->
+                    <div class="animate fade-right bg-[#0E2F66] text-white p-10 rounded-lg">
+
+                        <ul class="space-y-4">
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>460 volts</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>TEFC</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>1.15 SF</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>Class F insulation with a B rise</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>Non reverse ratchet standard (ccw rotation)</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>Cast iron</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>Oil lubricated thrust bearings 320 frame and above</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>Suitable for VFD 4:1 speed range</span>
+                            </li>
+
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="arrow-right" class="w-5 h-5 mt-1"></i>
+                                <span>115 volts space heater</span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-10 text-white" style="background: linear-gradient(to bottom, #002768, #BE0B31);">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="space-y-12">
+
+                <!-- Metric -->
+                <div>
+                    <h3 class="text-xl mb-2">Metric</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by Baldor, Marathon, Reliance, Cemp, and ABB.
+                        Metric dimension motors are designed in IEC frames from D63 through D200L.
+                        The motors are available in 50Hz or 60 Hz. Motor construction meets IP54
+                        and includes motors with B3 base mounting, B5 Flange mounting, or B14 Face
+                        mounting. Stock motors range in size from .18kW to 30 kW. Typical applications
+                        for this product include pumps, fans, conveyors, machine tools, gear reducers
+                        and any other jobs that requires IEC frames.
+                    </p>
+                </div>
+
+                <!-- Brake Motors -->
+                <div>
+                    <h3 class="text-xl mb-2">Brake Motors</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by Baldor, Teco, Reliance, and Marathon. Brake motors may be used
+                        on machine tools, conveyors, door operators, speed reducers, hoists, or any
+                        application requiring quick stops and positive holds.
+                    </p>
+                </div>
+
+                <!-- Pump -->
+                <div>
+                    <h3 class="text-xl mb-2">Pump</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by Baldor, Marathon, North American, and Reliance. Pump motors
+                        include single or three phase jet pump motors, square flange motors,
+                        close-coupled pump motors, and P-base vertical solid shaft pump motors.
+                        The motors are stocked in TEFC, open drip proof, and many explosion proof
+                        ratings. Applications for these motors include a wide range, from swimming
+                        pool pumps to medium and high thrust in-line pumps used in water treatment
+                        plants. Horse powers range in size from 1/3 through 75 HP.
+                    </p>
+                </div>
+
+                <!-- ATEX -->
+                <div>
+                    <h3 class="text-xl mb-2">ATEX (Flameproof)</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by ABB, Cemp, Marathon. Available in either Zone 1 or Zone 2
+                        classifications. Available in 1–100HP. These cast iron motors meet automotive
+                        requirements for sound power levels.
+                    </p>
+                </div>
+
+                <!-- Commercial Motors -->
+                <div>
+                    <h3 class="text-xl mb-2">Commercial Motors</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by Baldor, GE, and Marathon. This definite purpose product line
+                        is designed for certain applications requiring NEMA 48 and 56 motors rated
+                        between 1/4 and 1 HP, in both single and three phase ratings. Typical
+                        applications include jet pump, heating & cooling, ventilation, air
+                        conditioning, blowers, direct drive, condenser, and pedestal fans.
+                    </p>
+                </div>
+
+                <!-- Explosion Proof -->
+                <div>
+                    <h3 class="text-xl mb-2">Explosion Proof</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by Baldor, Marathon, North American, Reliance, Tatung, and Teco.
+                        Explosion proof motors are used in applications where hazardous fumes or
+                        dust may be present. The motors are available in both single and three
+                        phase designs, from 1/4 to 300 HP. Can include standard foot mounted,
+                        C-face with base, and C-face less base, 60 Hz, jet pump motors, and
+                        inverter drive motors.
+                    </p>
+                </div>
+
+                <!-- General Purpose -->
+                <div>
+                    <h3 class="text-xl mb-2">General Purpose</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by Baldor, Marathon, Reliance, Tatung, and Teco, North American.
+                        General purpose motors are available in open drop proof and TEFC construction
+                        in both single and three phase. Sizes from 1/12 to 1500 HP are available.
+                        These general purpose motors are for use in a variety of applications such
+                        as compressors, pumps, fans, conveyors, material handling, machine tools,
+                        and many others. Also available are stock motors which are direct replacements
+                        for the motors built since 1952. NEMA frames.
+                    </p>
+                </div>
+
+                <!-- Vertical Pump Motor -->
+                <div>
+                    <h3 class="text-xl mb-2">Vertical Pump Motor</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by North American, Reliance, Tatung. Stocking VHS high thrust
+                        motors from 5HP to 250 HP in 4 and 6 pole TEFC 3/60/460 volts. Custom VSS
+                        motors in various enclosures (WPI, WPII, TEFC, TEAAC, TEWAC) in voltages
+                        460, 4160, 6600, 13.8 Kv in either 50 or 60 Hz. Motors designed for your
+                        individual application.
+                    </p>
+                </div>
+
+                <!-- Medium Voltage Motors -->
+                <div>
+                    <h3 class="text-xl mb-2">Medium Voltage Motors</h3>
+
+                    <p class="text-white/90 leading-relaxed">
+                        Manufactured by Teco, Marathon, Baldor, Reliance, GE. Horizontal and vertical
+                        medium/high voltage motors from 2300/4160 6600 and 13.8KV. Enclosures WPI,
+                        WPII, ODP, TEFC, TEAAC, TEWC. Motors can be built to IEC or NEMA standards.
+                    </p>
+                </div>
+
+                <!-- Standard Features -->
+                <div>
+
+                    <h3 class="text-xl mb-4">Standard features</h3>
+
+                    <ul class="space-y-3">
+
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <span>Copper bar rotor</span>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <span>VPI insulation</span>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <span>Low noise construction</span>
+                        </li>
+
+                    </ul>
+
+                    <p class="text-white/90 mt-4">
+                        Proper bearing selection based on design and application
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-white text-gray-700">
+
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 mb-5">
+
+            <!-- GRID -->
+            <div class="grid md:grid-cols-[3fr_0.8fr_1.2fr] gap-16">
+
+                <!-- LEFT COLUMN -->
+                <div>
+
+                    <p class="text-sm leading-relaxed mb-6">
+                        APEXCO GENERAL Supply INC. established in 2011 in TEXAS, USA. In the
+                        beginning we strictly focus on resale of Oilfield Drilling Equipment's
+                        & Spare Parts. Due to high demand for Pipe, Valves and Fittings in the
+                        Export Market we started sourcing and supplying these products to
+                        Clients at a very competitive price and delivery.
+                    </p>
+
+                    <p class="text-sm">
+                        10039 BISSONNET ST, SUITE: 312B, HOUSTON, TEXAS 77036, USA
+                    </p>
+
+                    <p class="text-sm mb-6">
+                        6140 Hwy 6 #285, Missouri City, TX 77459, USA
+                    </p>
+
+                    <div class="flex gap-5 text-xl text-gray-600 mt-4">
+
+                        <i class="fa-brands fa-facebook-f hover:text-blue-600 cursor-pointer"></i>
+                        <i class="fa-brands fa-x-twitter hover:text-black cursor-pointer"></i>
+                        <i class="fa-brands fa-linkedin-in hover:text-blue-700 cursor-pointer"></i>
+                        <i class="fa-brands fa-instagram hover:text-pink-600 cursor-pointer"></i>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <!-- LINKS COLUMN -->
+                <div>
+
+                    <ul class="space-y-4 text-base">
+
+                        <li><a href="#" class="hover:text-red-600">Home</a></li>
+                        <li><a href="#" class="hover:text-red-600">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-600">Services</a></li>
+                        <li><a href="#" class="hover:text-red-600">Our Products</a></li>
+                        <li><a href="#" class="hover:text-red-600">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT COLUMN -->
+                <div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Contact Info
+                    </h3>
+
+                    <p class="text-lg mb-3">
+                        832-546-5002
+                    </p>
+
+                    <p class="text-lg mb-3">
+                        info@apexcosupplyusa.com
+                    </p>
+
+                    <p class="text-lg">
+                        832-546-5002
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-[#9F0E2D] text-white">
+
+            <div
+                class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-sm text-center md:text-left">
+
+                <p class="md:text-left">
+                    © Apexcosupplyusa.com. All rights reserved.
+                </p>
+
+                <p class="md:text-right">
+                    Mon – Fri: 9:00 – 19:00 / Closed on Weekends
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+
+        lucide.createIcons();
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const btn = document.getElementById("menuBtn");
+            const menu = document.getElementById("mobileMenu");
+
+            btn.addEventListener("click", function () {
+                menu.classList.toggle("hidden");
+            });
+
+        });
+
+    </script>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

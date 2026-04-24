@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apexco Global Energy Products</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const elements = document.querySelectorAll(".animate");
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+
+                });
+
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+
+    </script>
+
+    <!-- PAGE LOADER -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
+
+        <div class="flex flex-col items-center gap-6">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 animate-pulse">
+
+            <!-- LOADING SPINNER -->
+            <div class="w-10 h-10 border-4 border-gray-200 border-t-[#BE0B31] rounded-full animate-spin"></div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            loader.style.transition = "opacity 0.5s ease";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full bg-white z-50 shadow nav-font">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex items-center justify-between h-20">
+
+                <!-- LOGO -->
+                <div>
+                    <a href="/index.html">
+                        <img src="/Assets/Logo.png" class="h-10" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm">
+
+                    <a href="/index.html" class="text-gray-700 hover:text-red-600">
+                        Home
+                    </a>
+
+                    <a href="/pages/about.html" class=" text-gray-700 hover:text-red-600 ">
+                        About Us
+                    </a>
+
+                    <a href="/pages/service.html" class="  bg-red-600 text-white px-5 py-2">
+                        Services
+                    </a>
+
+                    <a href="/pages/products.html" class="text-gray-700 hover:text-red-600">
+                        Products
+                    </a>
+
+                    <a href="/pages/contact.html" class="text-gray-700 hover:text-red-600">
+                        Contact Us
+                    </a>
+
+                </nav>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="menuBtn" class="md:hidden">
+                    <i data-lucide="grip" class="w-7 h-7"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden fixed top-20 left-0 w-full h-screen bg-white nav-font">
+
+            <a href="/index.html" class="block px-6 py-4 border-b">Home</a>
+            <a href="/pages/about.html" class="block px-6 py-4 border-b">About Us</a>
+            <a href="/pages/service.html" class="block px-6 py-4 bg-red-600 text-white ">Services</a>
+            <a href="/pages/products.html" class="block px-6 py-4 border-b">Products</a>
+            <a href="/pages/contact.html" class="block px-6 py-4">Contact Us</a>
+
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+    <!-- BANNER -->
+    <section class="relative h-[350px] pt-20">
+
+        <img src="/Assets/Service bg.png" class="absolute inset-0 w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <div class="relative h-full flex items-center justify-center text-white">
+
+            <h1 class="heading text-4xl md:text-5xl font-medium">
+                Service
+            </h1>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- SECTION -->
+
+    <section class="relative pt-10 pb-40 min-h-[900px] overflow-hidden">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 -z-10">
+            <img src="/Assets/Oil bg.jpg" class="w-full h-full object-cover object-bottom" alt="">
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="max-w-2xl">
+
+                <h2 class="heading text-3xl md:text-5xl font-medium leading-tight text-black py-4">
+                    <span class="md:whitespace-nowrap">
+                        Trusted Oilfield Equipment Services
+                    </span>
+                </h2>
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    APEXCO GLOBAL ENERGY PRODUCTS LLC is the highest ethical and professional company with standards and
+                    strive to stay on the leading edge, in an everchanging environment.
+                </p>
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+
+                    While our greatest strength is the ability to understand the client goals, our success is very much
+                    attributed to long and efficient experience in the field of Ship Chandling, Oilfield, Marine and
+                    Industrial sector. The dedication and commitment of each and every member of APEXCO GLOBAL ENERGY
+                    PRODUCTS LLC Family to deliver unsurpassed quality, reliable products and service to the total
+                    satisfaction of all our customers.
+
+                </p>
+
+                <!-- BUTTON -->
+                <a href="#" class="group inline-flex items-center gap-3 bg-red-600 text-white px-5 py-2">
+
+                    Profducts
+
+                    <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="bg-white text-gray-700">
+
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 mb-5">
+
+            <!-- GRID -->
+            <div class="grid md:grid-cols-[3fr_0.8fr_1.2fr] gap-16">
+
+                <!-- LEFT COLUMN -->
+                <div>
+
+                    <p class="text-sm leading-relaxed mb-6">
+                        APEXCO GENERAL Supply INC. established in 2011 in TEXAS, USA. In the
+                        beginning we strictly focus on resale of Oilfield Drilling Equipment's
+                        & Spare Parts. Due to high demand for Pipe, Valves and Fittings in the
+                        Export Market we started sourcing and supplying these products to
+                        Clients at a very competitive price and delivery.
+                    </p>
+
+                    <p class="text-sm">
+                        10039 BISSONNET ST, SUITE: 312B, HOUSTON, TEXAS 77036, USA
+                    </p>
+
+                    <p class="text-sm mb-6">
+                        6140 Hwy 6 #285, Missouri City, TX 77459, USA
+                    </p>
+
+                    <div class="flex gap-5 text-xl text-gray-600 mt-4">
+
+                        <i class="fa-brands fa-facebook-f hover:text-blue-600 cursor-pointer"></i>
+                        <i class="fa-brands fa-x-twitter hover:text-black cursor-pointer"></i>
+                        <i class="fa-brands fa-linkedin-in hover:text-blue-700 cursor-pointer"></i>
+                        <i class="fa-brands fa-instagram hover:text-pink-600 cursor-pointer"></i>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <!-- LINKS COLUMN -->
+                <div>
+
+                    <ul class="space-y-4 text-base">
+
+                        <li><a href="#" class="hover:text-red-600">Home</a></li>
+                        <li><a href="#" class="hover:text-red-600">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-600">Services</a></li>
+                        <li><a href="#" class="hover:text-red-600">Our Products</a></li>
+                        <li><a href="#" class="hover:text-red-600">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT COLUMN -->
+                <div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Contact Info
+                    </h3>
+
+                    <p class="text-lg mb-3">
+                        832-546-5002
+                    </p>
+
+                    <p class="text-lg mb-3">
+                        info@apexcosupplyusa.com
+                    </p>
+
+                    <p class="text-lg">
+                        832-546-5002
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-[#9F0E2D] text-white">
+
+            <div
+                class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-sm text-center md:text-left">
+
+                <p class="md:text-left">
+                    © Apexcosupplyusa.com. All rights reserved.
+                </p>
+
+                <p class="md:text-right">
+                    Mon – Fri: 9:00 – 19:00 / Closed on Weekends
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+
+        lucide.createIcons();
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const btn = document.getElementById("menuBtn");
+            const menu = document.getElementById("mobileMenu");
+
+            btn.addEventListener("click", function () {
+                menu.classList.toggle("hidden");
+            });
+
+        });
+
+    </script>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

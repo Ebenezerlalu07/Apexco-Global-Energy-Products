@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apexco Global Energy Products</title>
+    <link rel="icon" type="image/x-icon" href="/assets/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const elements = document.querySelectorAll(".animate");
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+
+                });
+
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+
+        });
+
+    </script>
+
+    <!-- PAGE LOADER -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
+
+        <div class="flex flex-col items-center gap-6">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 animate-pulse">
+
+            <!-- LOADING SPINNER -->
+            <div class="w-10 h-10 border-4 border-gray-200 border-t-[#BE0B31] rounded-full animate-spin"></div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            loader.style.transition = "opacity 0.5s ease";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full bg-white z-50 shadow nav-font">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex items-center justify-between h-20">
+
+                <!-- LOGO -->
+                <div>
+                    <a href="/index.html">
+                        <img src="/Assets/Logo.png" class="h-10" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm">
+
+                    <a href="/index.html" class="text-gray-700 hover:text-red-600">
+                        Home
+                    </a>
+
+                    <a href="/pages/about.html" class="  bg-red-600 text-white px-5 py-2">
+                        About Us
+                    </a>
+
+                    <a href="/pages/service.html" class="text-gray-700 hover:text-red-600">
+                        Services
+                    </a>
+
+                    <a href="/pages/products.html" class="text-gray-700 hover:text-red-600">
+                        Products
+                    </a>
+
+                    <a href="/pages/contact.html" class="text-gray-700 hover:text-red-600">
+                        Contact Us
+                    </a>
+
+                </nav>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="menuBtn" class="md:hidden">
+                    <i data-lucide="grip" class="w-7 h-7"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden fixed top-20 left-0 w-full h-screen bg-white nav-font">
+
+            <a href="/index.html" class="block px-6 py-4 border-b">Home</a>
+            <a href="/pages/about.html" class="block px-6 py-4 bg-red-600 text-white ">About Us</a>
+            <a href="/pages/service.html" class="block px-6 py-4 border-b">Services</a>
+            <a href="/pages/products.html" class="block px-6 py-4 border-b">Products</a>
+            <a href="/pages/contact.html" class="block px-6 py-4">Contact Us</a>
+
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+    <!-- BANNER -->
+    <section class="relative h-[350px] pt-20">
+
+        <img src="/Assets/About bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <div class="relative h-full flex items-center justify-center text-white">
+
+            <h1 class="heading text-4xl md:text-5xl font-medium">
+                About Us
+            </h1>
+
+        </div>
+
+    </section>
+
+
+
+    <!--CONTINER SECTION -->
+    <section class=" overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- LEFT IMAGE -->
+                <div class="flex justify-center lg:justify-start">
+                    <img src="/Assets/container.png" alt="Container"
+                        class="w-full max-w-4xl object-contain mb-8 hanging-container">
+                </div>
+
+                <!-- RIGHT CONTENT -->
+                <div class="space-y-10">
+
+                    <!-- ITEM -->
+                    <div class="flex items-start gap-4 animate-item delay-1">
+
+                        <div class="text-[#BE0B31] mt-1">
+                            <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-medium text-gray-900 mb-2">
+                                Innovation
+                            </h3>
+
+                            <p class="mt-3 text-gray-700 max-w-lg leading-relaxed">
+                                Our success depends at the end on the satisfaction of our
+                                customers. Our strategy targets for this reason the use of
+                                technical innovations for the benefit of our customers.
+                                Because innovation is progress.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ITEM -->
+                    <div class="flex items-start gap-4 animate-item delay-2">
+
+                        <div class="text-[#BE0B31] mt-1">
+                            <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-medium text-gray-900 mb-2">
+                                Parts and systems
+                            </h3>
+
+                            <p class="text-gray-600 leading-relaxed">
+                                To retain and reinforce our position as leading Ship
+                                Chandler and to the Oil, Gas, Marine and Industrial
+                                supplies and services will be achieved through on time
+                                and zero defect supply.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ITEM -->
+                    <div class="flex items-start gap-4 animate-item delay-3">
+
+                        <div class="text-[#BE0B31] mt-1">
+                            <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-medium text-gray-900 mb-2">
+                                Maintenance
+                            </h3>
+
+                            <p class="text-gray-600 leading-relaxed">
+                                Backed by responsive service and dedication to achieve
+                                excellence in our work.
+                            </p>
+                        </div>
+
+                    </div><br>
+
+                </div>
+
+                <style>
+                    @keyframes fadeSlideUp {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(30px);
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .animate-item {
+                        opacity: 0;
+                        animation: fadeSlideUp 0.8s ease forwards;
+                    }
+
+                    .delay-1 {
+                        animation-delay: 0.2s;
+                    }
+
+                    .delay-2 {
+                        animation-delay: 0.5s;
+                    }
+
+                    .delay-3 {
+                        animation-delay: 0.8s;
+                    }
+                </style>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--Building Up SECTION -->
+    <section class="bg-[#BE0B31] text-white py-24">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- TOP FULL WIDTH CONTENT -->
+            <div class="mb-16">
+
+                <h2 class="heading text-2xl md:text-5xl font-medium leading-tight mb-6">
+                    Building Up Vision Leading Future
+                </h2>
+
+                <p class="text-white/90 font-light leading-relaxed">
+                    APEXCO GLOBAL ENERGY PRODUCTS LLC established in 2011 in TEXAS, USA. In the beginning we strictly
+                    focus on resale of Oilfield Drilling Equipment’s & Spare Parts. Due to high demand for Pipe, Valves
+                    and Fittings in the Export Market we started sourcing and supplying these products to Clients at a
+                    very competitive price and delivery.
+                </p>
+
+            </div>
+
+
+            <!-- GRID FOR ITEMS + IMAGE -->
+            <div class="grid lg:grid-cols-2 gap-16 items-stretch">
+
+                <!-- LEFT ITEMS -->
+                <div class="flex flex-col">
+
+                    <!-- ITEM -->
+                    <div class="animate-item delay-1">
+
+                        <div class="border-t border-white/100 mb-10"></div>
+
+                        <div class="flex items-start gap-6">
+
+                            <img src="/Assets/Vision.png" class="w-14 h-14 object-contain">
+
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">
+                                    Vision
+                                </h3>
+
+                                <p class="text-white/90 max-w-xl leading-relaxed">
+                                    We strive to be the best provider of Products in the Oilfield Industry through the
+                                    best quality service and on time delivery. The management and staff strive to work
+                                    hard to improve constantly with support of Manufacturer’s and Vendors
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ITEM -->
+                    <div class="animate-item delay-2">
+
+                        <div class="border-t border-white/100 my-10"></div>
+
+                        <div class="flex items-start gap-6">
+
+                            <img src="/Assets/Expertize.png" class="w-14 h-14 object-contain">
+
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">
+                                    Expertise
+                                </h3>
+
+                                <p class="text-white/90 max-w-xl leading-relaxed">
+                                    Our experienced staff for the Oilfield Products have the ability to understand the
+                                    client goals. The dedication and commitment of each and every member to deliver
+                                    excellent quality, reliable products and service to the total satisfaction of our
+                                    customers.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ITEM -->
+                    <div class="animate-item delay-3">
+
+                        <div class="border-t border-white/100 my-10"></div>
+
+                        <div class="flex items-start gap-6">
+
+                            <img src="/Assets/qulity.png" class="w-14 h-14 object-contain">
+
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">
+                                    Quality
+                                </h3>
+
+                                <p class="text-white/90 max-w-xl leading-relaxed">
+                                    Our Quality Policy is strictly accountable to satisfy our client’s by meeting their
+                                    standards
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT IMAGE -->
+                <div class="animate fade-right flex items-stretch">
+
+                    <img src="/Assets/Building Up.jpg" class="w-full h-full object-cover rounded shadow-xl">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- SECTION -->
+    <section class=" py-10">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CARD -->
+                <div
+                    class="group bg-white shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+
+                    <!-- IMAGE -->
+                    <div class="overflow-hidden">
+                        <img src="/Assets/Who we are.png"
+                            class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700">
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-medium text-gray-900 mb-3 group-hover:text-[#BE0B31] transition">
+                            Who We Are
+                        </h3>
+
+                        <p class="text-gray-600 leading-relaxed">
+                            We are the highest ethical and professional company with standards and strive to stay
+                            on the leading edge, in an everchanging environment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD -->
+                <div
+                    class="group bg-white shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+
+                    <div class="overflow-hidden">
+                        <img src="/Assets/Our service.jpg"
+                            class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700">
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-medium text-gray-900 mb-3 group-hover:text-[#BE0B31] transition">
+                            Our Services
+                        </h3>
+
+                        <p class="text-gray-600 leading-relaxed">
+                            While our greatest strength is the ability to understand the client goals, our success
+                            is very much attributed to long and efficient experience in the field of Ship
+                            Chandling, Oilfield, Marine and Industrial sector.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD -->
+                <div
+                    class="group bg-white shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+
+                    <div class="overflow-hidden">
+                        <img src="/Assets/Our process.png"
+                            class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700">
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-medium text-gray-900 mb-3 group-hover:text-[#BE0B31] transition">
+                            Our Process
+                        </h3>
+
+                        <p class="text-gray-600 leading-relaxed">
+                            To retain and reinforce our position as leading Ship Chandler and to the Oil, Gas,
+                            Marine and Industrial supplies and services will be achieved through on time and zero
+                            defect supply backed by responsive service and dedication to achieve excellence in our
+                            work.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- CTA SECTION -->
+    <section class=" py-8">
+
+        <div class=" mx-auto text-center px-3">
+
+            <!-- HEADING -->
+            <h2 class="heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-3 text-center">
+                We’re here to assist you
+            </h2>
+
+            <!-- DESCRIPTION -->
+            <p class="text-gray-600 text-lg mb-10">
+                Our dedicated team is ready to help with product information, order requests, and general inquiries
+            </p>
+
+            <!-- BUTTON -->
+            <a href="#" class="group inline-flex items-center gap-3 bg-red-600 text-white px-5 py-2">
+
+                Contact Us
+
+                <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="bg-white text-gray-700">
+
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <!-- LOGO -->
+            <img src="/Assets/Logo.png" class="h-16 mb-5">
+
+            <!-- GRID -->
+            <div class="grid md:grid-cols-[3fr_0.8fr_1.2fr] gap-16">
+
+                <!-- LEFT COLUMN -->
+                <div>
+
+                    <p class="text-sm leading-relaxed mb-6">
+                        APEXCO GENERAL Supply INC. established in 2011 in TEXAS, USA. In the
+                        beginning we strictly focus on resale of Oilfield Drilling Equipment's
+                        & Spare Parts. Due to high demand for Pipe, Valves and Fittings in the
+                        Export Market we started sourcing and supplying these products to
+                        Clients at a very competitive price and delivery.
+                    </p>
+
+                    <p class="text-sm">
+                        10039 BISSONNET ST, SUITE: 312B, HOUSTON, TEXAS 77036, USA
+                    </p>
+
+                    <p class="text-sm mb-6">
+                        6140 Hwy 6 #285, Missouri City, TX 77459, USA
+                    </p>
+
+                    <div class="flex gap-5 text-xl text-gray-600 mt-4">
+
+                        <i class="fa-brands fa-facebook-f hover:text-blue-600 cursor-pointer"></i>
+                        <i class="fa-brands fa-x-twitter hover:text-black cursor-pointer"></i>
+                        <i class="fa-brands fa-linkedin-in hover:text-blue-700 cursor-pointer"></i>
+                        <i class="fa-brands fa-instagram hover:text-pink-600 cursor-pointer"></i>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <!-- LINKS COLUMN -->
+                <div>
+
+                    <ul class="space-y-4 text-base">
+
+                        <li><a href="#" class="hover:text-red-600">Home</a></li>
+                        <li><a href="#" class="hover:text-red-600">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-600">Services</a></li>
+                        <li><a href="#" class="hover:text-red-600">Our Products</a></li>
+                        <li><a href="#" class="hover:text-red-600">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT COLUMN -->
+                <div>
+
+                    <h3 class="text-xl font-semibold mb-4">
+                        Contact Info
+                    </h3>
+
+                    <p class="text-lg mb-3">
+                        832-546-5002
+                    </p>
+
+                    <p class="text-lg mb-3">
+                        info@apexcosupplyusa.com
+                    </p>
+
+                    <p class="text-lg">
+                        832-546-5002
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-[#9F0E2D] text-white">
+
+            <div
+                class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-sm text-center md:text-left">
+
+                <p class="md:text-left">
+                    © Apexcosupplyusa.com. All rights reserved.
+                </p>
+
+                <p class="md:text-right">
+                    Mon – Fri: 9:00 – 19:00 / Closed on Weekends
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+
+        lucide.createIcons();
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const btn = document.getElementById("menuBtn");
+            const menu = document.getElementById("mobileMenu");
+
+            btn.addEventListener("click", function () {
+                menu.classList.toggle("hidden");
+            });
+
+        });
+
+    </script>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>
