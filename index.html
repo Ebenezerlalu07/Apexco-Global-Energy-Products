@@ -121,21 +121,18 @@
 
         <!-- Container -->
         <div
-            class="relative max-w-7xl mx-auto px-6 min-h-[90vh] md:min-h-screen flex flex-col justify-center md:justify-between pt-24 md:pt-40 pb-10 md:pb-16">
+            class="relative max-w-7xl mx-auto px-6 min-h-[90vh] md:min-h-screen flex flex-col justify-between pt-40 md:pt-40 pb-10 md:pb-16">
 
             <!-- TOP CONTENT -->
-            <div class=" max-w-2xl md:max-w-3xl animate fade-left">
+            <div class="fade-left max-w-2xl md:max-w-3xl">
 
-                <h1
-                    class="heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium leading-tight">
+                <h1 class="heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium leading-tight">
 
                     Quality Oil Field <br class="hidden sm:block">
                     Equipment and <br class="hidden sm:block">
                     Industrial Supplies
 
                 </h1>
-
-
 
                 <p class="mt-4 text-sm sm:text-base md:text-lg text-gray-200 max-w-xl">
                     Taking care of oil field & industrial needs
@@ -156,8 +153,9 @@
 
             </div>
 
+
             <!-- BOTTOM CONTENT -->
-            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 md:gap-8 mt-12 md:mt-16">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 md:gap-8">
 
                 <p class="max-w-xl text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed">
                     We strive to be the best provider of Products in the Oilfield Industry
@@ -180,7 +178,7 @@
     </section>
 
 
-    <!-- SECTION -->
+    <!--FORKLIFT SECTION -->
     <section class="py-16 md:py-20">
 
         <div class="max-w-7xl mx-auto px-6">
@@ -188,7 +186,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
 
                 <!-- IMAGE -->
-                <div class=" flex justify-center md:justify-end order-1 md:order-2">
+                <div class="fade-right flex justify-center md:justify-end order-1 md:order-2">
 
                     <img src="/Assets/Forklift.png"
                         class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain">
@@ -197,7 +195,7 @@
 
 
                 <!-- CONTENT -->
-                <div class=" order-2 md:order-1">
+                <div class="fade-left order-2 md:order-1">
 
                     <h2 class="heading text-2xl sm:text-3xl md:text-5xl font-medium leading-tight">
 
@@ -249,7 +247,7 @@
 
 
             <!-- RIGHT CONTENT -->
-            <div class=" bg-[#c8102e] text-white relative flex items-center">
+            <div class="fade-right bg-[#c8102e] text-white relative flex items-center">
 
                 <div class="max-w-3xl px-6 sm:px-8 md:px-12 lg:px-16 py-10 md:py-20">
 
@@ -350,7 +348,7 @@
                 <!-- CARD 1 -->
                 <a href="/pages/service.html">
 
-                    <div class="relative overflow-hidden group cursor-pointer">
+                    <div class="relative overflow-hidden group cursor-pointer fade-left ">
 
                         <img src="/Assets/Full service.png"
                             class="w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] object-cover transition duration-700 group-hover:scale-110">
@@ -387,7 +385,7 @@ transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
 
 
                 <!-- CARD 2 -->
-                <div class=" bg-[#c8102e] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
+                <div class="fade-right bg-[#c8102e] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                     <div>
@@ -414,7 +412,7 @@ transition duration-300 hover:rotate-12">
 
 
                 <!-- CARD 3 -->
-                <div class=" bg-[#0c2d63] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
+                <div class="fade-right bg-[#0c2d63] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                     <div>
@@ -770,24 +768,30 @@ bg-center bg-cover" style="background-image:url('/Assets/Revie bg.jpg')">
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
-            const elements = document.querySelectorAll(".animate");
+            const elements = document.querySelectorAll(
+                ".fade-left, .fade-right, .fade-up, .fade-down, .zoom-in"
+            );
 
-            const observer = new IntersectionObserver((entries) => {
+            const observer = new IntersectionObserver((entries, observer) => {
 
                 entries.forEach(entry => {
 
                     if (entry.isIntersecting) {
+
                         entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+
                     }
 
                 });
 
-            }, { threshold: 0.2 });
+            }, { threshold: 0.15 });
 
             elements.forEach(el => observer.observe(el));
 
         });
     </script>
+
 </body>
 
 </html>
