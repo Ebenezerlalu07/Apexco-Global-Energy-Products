@@ -124,7 +124,7 @@
             class="relative max-w-7xl mx-auto px-6 min-h-[90vh] md:min-h-screen flex flex-col justify-between pt-40 md:pt-40 pb-10 md:pb-16">
 
             <!-- TOP CONTENT -->
-            <div class="fade-left max-w-2xl md:max-w-3xl">
+            <div class="max-w-2xl md:max-w-3xl fade-left">
 
                 <h1 class="heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium leading-tight">
 
@@ -134,11 +134,11 @@
 
                 </h1>
 
-                <p class="mt-4 text-sm sm:text-base md:text-lg text-gray-200 max-w-xl">
+                <p class="mt-4 text-sm sm:text-base md:text-lg text-gray-200 max-w-xl delay-1">
                     Taking care of oil field & industrial needs
                 </p>
 
-                <div class="mt-6">
+                <div class="mt-6 delay-2">
 
                     <a href="/pages/about.html"
                         class="group inline-flex items-center gap-3 bg-red-600 text-white px-5 py-2.5 text-sm sm:text-base">
@@ -348,7 +348,7 @@
                 <!-- CARD 1 -->
                 <a href="/pages/service.html">
 
-                    <div class="relative overflow-hidden group cursor-pointer fade-left ">
+                    <div class="relative overflow-hidden group cursor-pointer  ">
 
                         <img src="/Assets/Full service.png"
                             class="w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] object-cover transition duration-700 group-hover:scale-110">
@@ -385,7 +385,7 @@ transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
 
 
                 <!-- CARD 2 -->
-                <div class="fade-right bg-[#c8102e] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
+                <div class=" bg-[#c8102e] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                     <div>
@@ -412,7 +412,7 @@ transition duration-300 hover:rotate-12">
 
 
                 <!-- CARD 3 -->
-                <div class="fade-right bg-[#0c2d63] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
+                <div class=" bg-[#0c2d63] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between
 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
                     <div>
@@ -766,30 +766,32 @@ bg-center bg-cover" style="background-image:url('/Assets/Revie bg.jpg')">
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth >= 768) {
 
-            const elements = document.querySelectorAll(
-                ".fade-left, .fade-right, .fade-up, .fade-down, .zoom-in"
-            );
+            window.addEventListener("load", function () {
 
-            const observer = new IntersectionObserver((entries, observer) => {
+                const elements = document.querySelectorAll(
+                    ".fade-left, .fade-right, .fade-up, .fade-down"
+                );
 
-                entries.forEach(entry => {
+                const observer = new IntersectionObserver((entries, observer) => {
 
-                    if (entry.isIntersecting) {
+                    entries.forEach(entry => {
 
-                        entry.target.classList.add("show");
-                        observer.unobserve(entry.target);
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                            observer.unobserve(entry.target);
+                        }
 
-                    }
+                    });
 
-                });
+                }, { threshold: 0.15 });
 
-            }, { threshold: 0.15 });
+                elements.forEach(el => observer.observe(el));
 
-            elements.forEach(el => observer.observe(el));
+            });
 
-        });
+        }
     </script>
 
 </body>

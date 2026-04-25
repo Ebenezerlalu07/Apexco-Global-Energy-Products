@@ -17,29 +17,7 @@
 </head>
 
 <body>
-    <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const elements = document.querySelectorAll(".animate");
-
-            const observer = new IntersectionObserver((entries) => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    }
-
-                });
-
-            }, { threshold: 0.2 });
-
-            elements.forEach(el => observer.observe(el));
-
-        });
-
-    </script>
 
     <!-- PAGE LOADER -->
     <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
@@ -390,12 +368,12 @@
                 <div>
 
                     <!-- Image -->
-                    <div class="animate fade-right mb-10">
+                    <div class="fade-right mb-10">
                         <img src="/Assets/electrical inner.jpg" class="rounded-lg shadow-lg w-full object-cover">
                     </div>
 
                     <!-- Image -->
-                    <div class="animate fade-right mb-10">
+                    <div class="fade-right mb-10">
                         <img src="/Assets/electrical inner 2.jpg" class="rounded-lg shadow-lg w-full object-cover">
                     </div>
 
@@ -562,6 +540,35 @@
         document.addEventListener("DOMContentLoaded", function () {
             lucide.createIcons();
         });
+    </script>
+
+    <script>
+        if (window.innerWidth >= 768) {
+
+            window.addEventListener("load", function () {
+
+                const elements = document.querySelectorAll(
+                    ".fade-left, .fade-right, .fade-up, .fade-down"
+                );
+
+                const observer = new IntersectionObserver((entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                            observer.unobserve(entry.target);
+                        }
+
+                    });
+
+                }, { threshold: 0.15 });
+
+                elements.forEach(el => observer.observe(el));
+
+            });
+
+        }
     </script>
 </body>
 

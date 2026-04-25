@@ -61,29 +61,6 @@ body {
 
 
 
-.animate {
-    opacity: 0;
-    transition: all 1s ease;
-}
-
-.fade-in {
-    transform: translateY(20px);
-}
-
-.fade-right {
-    transform: translateX(120px);
-}
-
-.fade-left {
-    transform: translateX(-120px);
-}
-
-.animate.show {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
-}
-
-
 @keyframes containerSwing {
     0% {
         transform: rotate(-3deg);
@@ -101,4 +78,51 @@ body {
 .hanging-container {
     animation: containerSwing 6s ease-in-out infinite;
     transform-origin: top center;
+}
+
+
+
+
+
+/* Default (mobile) → no animation */
+.fade-left,
+.fade-right,
+.fade-up,
+.fade-down {
+    opacity: 1;
+    transform: none;
+}
+
+/* Desktop animation only */
+@media (min-width: 768px) {
+
+    .fade-left,
+    .fade-right,
+    .fade-up,
+    .fade-down {
+        opacity: 0;
+        transition: all .8s ease;
+    }
+
+    .fade-left {
+        transform: translateX(-60px);
+    }
+
+    .fade-right {
+        transform: translateX(60px);
+    }
+
+    .fade-up {
+        transform: translateY(60px);
+    }
+
+    .fade-down {
+        transform: translateY(-60px);
+    }
+
+    .show {
+        opacity: 1;
+        transform: translate(0);
+    }
+
 }
