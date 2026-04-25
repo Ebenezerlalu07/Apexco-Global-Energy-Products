@@ -126,3 +126,15 @@ body {
     }
 
 }
+
+/* Desktop parallax */
+@media (min-width: 768px) {
+
+    .testimonial-parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
